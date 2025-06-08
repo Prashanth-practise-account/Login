@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<style>
+		form
+		{
+			text-align:center;	
+			margin-top:3em;	
+		}
+		.heading{
+			margin-top:3em;
+		}
+		.failure{
+			color:red;
+		}
+	
+</style>
+</head>
+<body>
+<center class="heading"><h1>Registration Form</h1></center>
+<center><h1 class="failure" th:text="${failure}"></h1></center>
+<form th:action="@{/register}" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter your Name:</label>
+    <input type="text" class="form-control" name="name" id="name"  required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter your Phone Number:</label>
+    <input type="tel" class="form-control" name="phn" id="phn" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Enter your email:</label>
+    <input type="email" class="form-control" name="email" id="email" aria-describedby="emailHelp" required>
+    <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Enter the Password</label>
+    <input type="password" class="form-control" name="pass" id="pass" required>
+  </div>
+  <div class="mb-3 form-check">
+    <label class="form-check-label" for="exampleCheck1">Confirm-Password</label>
+     <input type="password" class="form-control" name="confirm" id="confirm" required>
+  </div>
+  <button type="submit" class="btn btn-primary">Create Account</button>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>

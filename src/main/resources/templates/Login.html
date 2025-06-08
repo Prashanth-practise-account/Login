@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-SgOJa3DmI69IUzQ2PVdRZhwQ+dy64/BUtbMJw1MZ8t5HZApcHrRKUc4W0kG879m7" crossorigin="anonymous">
+<style>
+	.success{
+		color:green;
+	}
+	.error{
+			color:red;
+	}
+</style>
+</head>
+<body>
+<center style="margin-top:5em"><h1>Login Form</h1></center>
+<center><h1 class="success" th:text="${success}"></h1></center>
+<center><h1 class="error" th:text="${failure}"></h1></center>
+<form th:action="@{/login}" method="post">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Email address</label>
+    <input  type="email" name="email" class="form-control" id="email" aria-describedby="emailHelp">
+  </div>
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Password</label>
+    <input type="password"  name="pass" class="form-control" id="pass">
+  </div>
+  <button type="submit" class="btn btn-primary" value="Login">Login</button>
+ <div>
+ 		<a th:href="@{/signup}">Don't have account? signup</a>
+ </div>
+</form>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.5/dist/js/bootstrap.bundle.min.js" integrity="sha384-k6d4wzSIapyDyv1kpU366/PK5hCdSbCRGRCMv+eplOQJWyd1fbcAu9OCUj5zNLiq" crossorigin="anonymous"></script>
+</body>
+</html>
